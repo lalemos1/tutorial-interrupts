@@ -9,7 +9,7 @@
   catching events.
 */
 
-#include "main.h"
+#include "../src/main.h"
 
 int main(void) {
     // Enable LED as output
@@ -19,7 +19,7 @@ int main(void) {
     // Enable button as input
     gpioEnable(GPIO_PORT_A);
     pinMode(BUTTON_PIN, GPIO_INPUT);
-    GPIOA->PUPDR |= _VAL2FLD(GPIO_PUPDR_PUPD2, 0b01); // Set PA2 as pull-up
+    GPIOA->PUPDR |= _VAL2FLD(GPIO_PUPDR_PUPD4, 0b01); // Set PA4 as pull-up
 
     // Initialize timer
     RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
